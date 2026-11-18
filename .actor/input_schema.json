@@ -1,0 +1,45 @@
+{
+  "title": "US restricted party screening",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "names": {
+      "title": "Company names",
+      "type": "array",
+      "description": "Company, vendor, supplier or manufacturer names to screen, one per line. Duplicates are screened once. Up to 50,000 per run.",
+      "editor": "stringList",
+      "prefill": ["Hikvision", "BGI Genomics Co., Ltd.", "Acme Industrial Supply"]
+    },
+    "minScore": {
+      "title": "Minimum match score",
+      "type": "number",
+      "description": "0.5 to 1.0. 1.0 keeps only exact matches after removing punctuation and legal suffixes (Co., Ltd., Inc., Group). Lower finds more spelling variants and more false positives. 0.88 is a good default.",
+      "editor": "number",
+      "minimum": 0.5,
+      "maximum": 1,
+      "default": 0.88
+    },
+    "lists": {
+      "title": "Lists",
+      "type": "array",
+      "description": "Lists to screen against. Leave empty for all five.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": ["US_DOD_1260H", "US_FAR_889", "US_FCC_COVERED", "US_DHS_UFLPA", "US_BIOSECURE"],
+        "enumTitles": ["DoD 1260H Chinese military companies", "Section 889 (FAR 52.204-25)", "FCC Covered List", "DHS UFLPA Entity List", "BIOSECURE (interim)"]
+      },
+      "default": []
+    },
+    "maxMatchesPerName": {
+      "title": "Matches per name",
+      "type": "integer",
+      "description": "How many of the best matches to keep for each name.",
+      "editor": "number",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 3
+    }
+  },
+  "required": ["names"]
+}

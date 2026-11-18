@@ -1,0 +1,12 @@
+{
+  "actorSpecification": 1,
+  "name": "restricted-party-screen",
+  "title": "US Restricted Party Screening (1260H, Section 889, FCC Covered, UFLPA, BIOSECURE)",
+  "description": "Screen company, vendor or supplier names against five US restricted-party lists that the Consolidated Screening List does not carry: DoD 1260H (with named subsidiaries), Section 889, the FCC Covered List, the DHS UFLPA Entity List and the interim BIOSECURE list. Every match cites the government source.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "meta": { "templateId": "python-start" },
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": { "dataset": "./dataset_schema.json" }
+}

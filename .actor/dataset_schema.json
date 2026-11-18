@@ -1,0 +1,22 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Screening results",
+      "transformation": {
+        "fields": ["input", "hit", "bestScore", "matches", "feedRelease"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "input": { "label": "Name screened", "format": "text" },
+          "hit": { "label": "Match", "format": "boolean" },
+          "bestScore": { "label": "Best score", "format": "number" },
+          "matches": { "label": "Matches (list, listed name, parent, source)", "format": "object" },
+          "feedRelease": { "label": "Feed release", "format": "text" }
+        }
+      }
+    }
+  }
+}
